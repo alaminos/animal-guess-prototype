@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!--[if gt IE 8]><!--> <html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Guess the animal</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+                <header>Guess the animal</header>
+                <main id="centralBoard">
+                    
+                    <button id="startButton" onclick="handlers.startButton()">Play</button>
+                    <div id="newsfeed"></div>
+                    <div id="gameArea">
+                        <form name="form" onsubmit="return handlers.sendButton()">
+                            <input type="text" id="userInput">
+                            <button type="submit">Send</button>
+                        </form>
+                        <!--<input type="text" id="userInput" placeholder="type your guess">
+                        <button onclick="handlers.sendButton()">ENVIAR</button>-->
+                        
+                    </div>
+                    <button id="continueBtn" onclick="handlers.continueButton()">Continue</button>
+                    
+                </main>
+                <aside class="counter counter-1" id="totalPoints"></aside> 
+                <aside class="counter counter-2" id="guessesLeft"></aside>
+                <footer>Hi I'm the footer</footer>
+        </div>
+        
+    </body>
+</html>

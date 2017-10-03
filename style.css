@@ -1,0 +1,135 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    font-family: 'PT Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 26px;  
+}
+
+#startButton {
+    margin-top: 100px;
+    height: 20%;
+    width: 30%;
+}
+
+input {
+    padding: 5px;
+    font-family: sans-serif;
+    font-size: 18px;
+    border: solid 1px #fff;
+    box-shadow: inset 1px 1px 2px 0 #707070;
+    transition: box-shadow 0.3s;
+}
+
+input:focus {
+    box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    height: 100vh;
+}
+
+header, footer {
+    color: #B4A742;
+    background-color: #4F3410;
+}
+
+header { 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    
+}
+
+main {
+    background-color: #B4A742;
+    min-height: 80%;
+}
+
+.counter {
+    background-color: #2B3B08;
+    color: #87A4B9;
+}
+
+.counter-1 {
+    color: yellowgreen;
+}
+
+.counter-2 {
+    color: green;
+}
+
+
+#continueBtn {
+    display: none;
+}
+
+#newsfeed {
+    height: 50%;
+    padding: 10vw;
+}
+
+#gameArea {
+    background-color: #8CA33E;
+    display: none;
+    height: 50%;
+}
+
+#continueBtn {
+    margin: 0 auto;
+    height: 20%;
+    width: 30%;
+}
+
+
+@media (max-width: 599px) {
+    header, main, footer {
+        flex: 100%;
+    }
+
+    aside {
+        flex: 50%;
+    }
+}
+
+@media (min-width: 600px) {
+    header {
+        flex: 100%;
+        order: 1;
+    } 
+    
+
+    main {
+        flex: 60%;
+        order: 3;
+        min-height: 80%;
+    }
+
+    aside {
+        font-size : 4vw;
+        flex: 20%;
+    }
+
+
+    .counter-1 {
+        order: 2;
+    }
+
+    .counter-2 {
+        order: 4;
+    }
+
+    footer {
+        flex: 100%;
+        order: 5;
+        
+    }
+}
