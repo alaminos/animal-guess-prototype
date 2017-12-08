@@ -1,32 +1,5 @@
 guessTheAnimalGame = {
 
-    /*animalList : [
-        
-            {
-                "name": "tiger",
-                "dato1": "feline",
-                "dato2": "mainly asian",
-                "dato3": "Stripes",
-                
-            },
-            
-            {
-                "name": "turtle",
-                "dato1": "reptile",
-                "dato2": "Can't run, but sure can hide",
-                "dato3": "This animal is very slow",
-                 
-            },
-        
-            {
-                "name": "dog",
-                "dato1": "mammal",
-                "dato2": "omnivore",
-                "dato3": "Best friend",
-                 
-            }
-        ],*/
-
     randomAnimal : {},
 
     totalPoints : 0,
@@ -45,9 +18,9 @@ guessTheAnimalGame = {
         var invitationMessage = "Guess the animal"
         var randomN = 0;
         var min = 0;
-        var max = this.animalList.length;
+        var max = faunaData.length;  //faunaData is a variable declared at the bottom, that stores the JSON data
         randomN = Math.floor(Math.random() * (max - min)) + min;
-        this.randomAnimal = this.animalList[randomN];
+        this.randomAnimal = faunaData[randomN]; //a random animal from the JSON array
         this.cluesLeft = Object.values(this.randomAnimal).length - 1;
         this.guessesLeft = 5;
         this.currentClue = 1;
@@ -102,7 +75,7 @@ guessTheAnimalGame = {
     },
 
     surrender : function() {
-        view.printInBoard(youLose); //should show cotinue butn
+        view.printInBoard(youLose); //should show cotinue btn
     },
 
 
@@ -166,12 +139,13 @@ view = {
 
 //accessing the json update 08122017
 
+var faunaData; //this variable will contain the json data
 var request = new XMLHttpRequest();
 request.open('GET', 'https://raw.githubusercontent.com/alaminos/fauna-data/master/faunaData.json'); // GET because we want to RECEIVE data, the second parameter of this method is the URL we are taking data from
-/*request.responseType = 'json';*/
+request.responseType = 'json';
 request.onload = function() {
-    console.log(request.responseText);
-}
+    faunaData = request.response;
+};
 request.send();
 
 /*view.setUpEventListeners();*/ //could be better to set this up?
