@@ -167,7 +167,7 @@ view = {
 //accessing the json update 08122017
 
 var request = new XMLHttpRequest();
-request.open('GET', 'https://github.com/alaminos/fauna-data/blob/master/faunaData.json'); // GET because we want to RECEIVE data, the second parameter of this method is the URL we are taking data from
+request.open('GET', 'https://raw.githubusercontent.com/alaminos/fauna-data/master/faunaData.json'); // GET because we want to RECEIVE data, the second parameter of this method is the URL we are taking data from
 request.responseType = 'json';
 request.onload = function() {
     console.log(request.responseText);
