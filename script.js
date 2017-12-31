@@ -14,7 +14,7 @@ guessTheAnimalGame = {
 
 
     startGame : function() {
-        // will select randomly an animal from the list and resets variables
+        // selects randomly an animal from the list and resets variables
         var invitationMessage = "Guess the animal"
         var randomN = 0;
         var min = 0;
@@ -35,6 +35,7 @@ guessTheAnimalGame = {
 
 
     evaluation : function(userInput) { 
+        userInput = userInput.toLowerCase();
         var tryAgainMessage = "Try again. ";
         var clueMessage = "Clue: ";
         var youLose = "You lose. The animal was " + this.randomAnimal["name"];
